@@ -34,6 +34,11 @@ const user = ref({})
 const roles = [
     //staff
     {title:'หน้าหลัก',to:'/Staff',role:'ฝ่ายบุคลากร'},
+    {title:'จัดการผู้รับการประเมิน',to:'/ManageEva',role:'ฝ่ายบุคลากร'},
+    {title:'จัดการกรรมการประเมิน',to:'/ManageCommit',role:'ฝ่ายบุคลากร'},
+    {title:'จัดการกรรมหัวข้อการประเมิน',to:'/Topic',role:'ฝ่ายบุคลากร'},
+    {title:'จัดการตัวชี้วัด',to:'/Indicate',role:'ฝ่ายบุคลากร'},
+    {title:'จัดการรอบการประเมิน',to:'/Round_eva',role:'ฝ่ายบุคลากร'},
 
     //commit
     {title:'หน้าหลัก',to:'/Committee',role:'กรรมการประเมิน'},

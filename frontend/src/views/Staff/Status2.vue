@@ -16,8 +16,8 @@
                             <td class="border text-center">{{ index+1 }}</td>
                             <td class="border text-center">{{ items.first_name }} {{ items.last_name }}</td>
                             <td class="border text-center">
-                                <v-btn :color="bg(items.status_eva)" class="text-white" size="small">
-                                    {{ items.status_eva === 1 ? 'ยังไม่ได้ประเมิน' : items.status_eva === 2 ? 'ยังไม่ได้ประเมิน' : 'ประเมินเสร็จสิ้น' }}
+                                <v-btn :color="bg(items.status_commit)" class="text-white" size="small">
+                                    {{ items.status_commit === 'n' ? 'ยังไม่ได้ประเมิน' : 'ประเมินเสร็จสิ้น' }}
                                 </v-btn>
                             </td>
                         </tr>
@@ -48,10 +48,9 @@ const fetch = async () => {
     }
 }
 
-const bg = (status_eva:string) => {
-    if(status_eva === 1) return 'error'
-    if(status_eva === 2) return 'error'
-    if(status_eva === 3) return 'success'
+const bg = (status_commit:string) => {
+    if(status_commit === 'n') return 'error'
+    if(status_commit === 'y') return 'success'
 }
 
 onMounted(fetch)

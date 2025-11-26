@@ -50,6 +50,9 @@ app.use('/api/Eva/selfeva',selfeva)
 const check_eva = require('./routes/Eva/check_eva')
 app.use('/api/Eva/check_eva',check_eva)
 
+const check_commit = require('./routes/Eva/check_commit')
+app.use('/api/Eva/check_commit',check_commit)
+
 
 //commit
 const show_eva = require('./routes/Commit/show_eva')

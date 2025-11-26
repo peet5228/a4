@@ -20,10 +20,10 @@
                                 <v-text-field v-model="form.username" :error-messages="error.username" label="ชื่อผู้ใช้"></v-text-field>
                             </v-col>
                             <v-col cols="12" md="6">
-                                <v-text-field v-model="form.password" :error-messages="error.password" label="รหัสผ่าน"></v-text-field>
+                                <v-text-field v-model="form.password" type="password" :error-messages="error.password" label="รหัสผ่าน"></v-text-field>
                             </v-col>
                             <v-col cols="12" md="6">
-                                <v-text-field v-model="confirmPassword" :error-messages="error.confirmPassword" label="ยืนยันรหัสผ่าน"></v-text-field>
+                                <v-text-field v-model="confirmPassword" type="password" :error-messages="error.confirmPassword" label="ยืนยันรหัสผ่าน"></v-text-field>
                             </v-col>
                             <v-col cols="12" >
                                 <v-select :items="roles" item-title="text" item-value="value" v-model="form.role" :error-messages="error.role" label="เลือกประเภทสมาชิก"></v-select>

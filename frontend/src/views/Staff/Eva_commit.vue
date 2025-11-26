@@ -83,6 +83,7 @@ const fetch = async () => {
         const res = await axios.get(`${api}/commit/${id_eva}`)
         people.value = res.data.before
         const  useData = res.data.after
+        console.log(res.data.before)
         if(useData.length === 0){
             List.value = [
                 {id_commit:null,id_member:'',role:''},
@@ -90,7 +91,7 @@ const fetch = async () => {
                 {id_commit:null,id_member:'',role:''},
             ]
         }else{
-            List.value = useData.map(c ({
+            List.value = useData.map(c => ({
                 id_commit:c.id_commit,id_member:c.id_member,role:c.role
             }))
             while(List.value.length < 3){

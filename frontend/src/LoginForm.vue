@@ -53,7 +53,10 @@ const Login = async () => {
         }else if(useRole === "ผู้รับการประเมินผล"){
             router.push("/Evaluatee")
         }
-    }catch(err){}
+    }catch(err){
+        console.error('Login Failed',err)
+        error.value = error.response?.data.message || 'เข้าสู่ระบบไม่สำเร็จ'
+    }
 }
 
 </script>

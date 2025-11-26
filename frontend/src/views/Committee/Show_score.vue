@@ -34,6 +34,10 @@
                         </v-col>
                     </v-row>
                     <v-alert type="success" class="text-end pa-2 font-weight-bold mt-3">คะแนนรวมสุทธิ : {{ totalScore }} คะแนน</v-alert>
+                    <div class="mt-4 text-center">
+                        <v-btn v-if="user.status_commit === 'n'" class="text-white" color="blue" @click="add(id_eva)">ประเมิน</v-btn>
+                        <v-btn v-else class="text-white" color="green">ประเมินแล้ว</v-btn>
+                    </div>
                 </v-form>
                 <v-alert v-else-if="user.status_eva === 1" type="info" >คุณยังไม่มีแบบประเมิน</v-alert>
                 <v-alert v-else type="warning">คุณยังไม่มีแบบประเมิน</v-alert>
@@ -52,6 +56,9 @@ const totalScore = ref(0)
 const user = ref({})
 const topics = ref([])
 const token = localStorage.getItem('token')
+const add = (id_eva:number) => {
+    router.push({path : `/Save_score/${id_eva}`})
+}
 const fetchUser = async () =>{
     try{
         const res = await axios.get(`http://localhost:3001/api/Commit/show_score/${id_eva}`,{

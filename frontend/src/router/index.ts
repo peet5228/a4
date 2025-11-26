@@ -7,6 +7,7 @@ import UserLayout from '@/components/UserLayout.vue'
 import Committee from '@/views/Committee/index.vue'
 import Show_score from '@/views/Committee/Show_score.vue'
 import Show_eva from '@/views/Committee/Show_eva.vue'
+import Save_score from '@/views/Committee/Save_score.vue'
 
 //eva
 import Evaluatee from '@/views/Evaluatee/index.vue'
@@ -117,6 +118,11 @@ const router = createRouter({
           path: '/Show_eva',
           name: 'Show_eva',
           component: Show_eva,
+        },
+        {
+          path: '/Save_score/:id_eva',
+          name: 'Save_score',
+          component: Save_score,
         },
       ]
     },

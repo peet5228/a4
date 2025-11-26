@@ -23,7 +23,8 @@
                             <td class="border text-center">{{ items.status_eva === 1 ? 'ผู้รับประเมินกำลังประเมินตนเอง' : items.status_eva === 2 ? 'รอกรรมกาประเมิน' : 'ประเมินเสร็จสิ้น' }}</td>
                             <td class="border text-center">{{ items.total_eva }} คะแนน</td>
                             <td class="border text-center">
-                                <v-btn class="text-white" size="small" color="blue" @click="add(items.id_eva)">ประเมิน</v-btn>
+                                <v-btn v-if="items.status_commit === 'n'" class="text-white" size="small" color="blue" @click="add(items.id_eva)">ประเมิน</v-btn>
+                                <v-btn v-else class="text-white" size="small" color="green">ประเมินแล้ว</v-btn>
                             </td>
                         </tr>
                         <tr v-if="result.length === 0">
@@ -54,7 +55,7 @@ const fetch = async () => {
     }
 }
 const add = (id_eva:number) => {
-    router.push({path : `Show_score/${id_eva}`})
+    router.push({path : `Save_score/${id_eva}`})
 }
 
 onMounted(fetch)

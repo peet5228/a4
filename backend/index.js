@@ -58,6 +58,9 @@ app.use('/api/Commit/show_eva',show_eva)
 const show_score = require('./routes/Commit/show_score')
 app.use('/api/Commit/show_score',show_score)
 
+const save_score = require('./routes/Commit/save_score')
+app.use('/api/Commit/save_score',save_score)
+
 
 // Block 404
 app.use((req,res) => res.status(404).json({message:'ปิดปรับปรุง !'}))

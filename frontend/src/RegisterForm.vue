@@ -4,7 +4,7 @@
             <v-col cols="12" md="8" lg="6">
                 <v-form @submit.prevent="saveMember">
                     <v-card class="pa-4">
-                        <h1 class="text-center font-weight-bold text-h5 text-maroon">สมัครสมาชิก</h1>
+                        <h1 class="text-center font-weight-bold text-h5 text-maroon">สมัครสมาชิก</h1>&nbsp;
                         <p class="text-sm text-center mt-2">ระบบประเมินบุคลากรวิทยาลัยเทคนิคน่าน</p>
                         <v-row class="mt-4">
                             <v-col cols="12" md="6">

@@ -17,6 +17,8 @@ import Topic from '@/views/Staff/Topic.vue'
 import Indicate from '@/views/Staff/Indicate.vue'
 
 import Selfeva from '@/views/Evaluatee/Selfeva.vue'
+import Round_eva from '@/views/Staff/Round_eva.vue'
+import Eva from '@/views/Staff/Eva.vue'
 
 
 
@@ -67,6 +69,16 @@ const router = createRouter({
           path: '/Indicate',
           name: 'Indicate',
           component: Indicate,
+        },
+        {
+          path: '/Round_eva',
+          name: 'Round_eva',
+          component: Round_eva,
+        },
+        {
+          path: '/Eva',
+          name: 'Eva',
+          component: Eva,
         },
       ]
     },

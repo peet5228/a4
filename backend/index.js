@@ -27,12 +27,22 @@ app.use('/api/Staff/member',member)
 const topic = require('./routes/Staff/topic')
 app.use('/api/Staff/topic',topic)
 
-//eva
+const indicate = require('./routes/Staff/indicate')
+app.use('/api/Staff/indicate',indicate)
+
+const round_eva = require('./routes/Staff/round_eva')
+app.use('/api/Staff/round_eva',round_eva)
+
+const eva = require('./routes/Staff/eva')
+app.use('/api/Staff/eva',eva)
+
+//eva---------------------------------------------
 const me = require('./routes/Eva/me')
 app.use('/api/Eva/me',me)
 
 const selfeva = require('./routes/Eva/selfeva')
 app.use('/api/Eva/selfeva',selfeva)
+
 
 
 

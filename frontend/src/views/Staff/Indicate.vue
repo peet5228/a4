@@ -14,7 +14,7 @@
                                 <v-textarea rows="3" v-model="form.detail_indicate" :error-messages="error.detail_indicate" label="รายละเอียด" />
                             </v-col>
                              <v-col cols="12" md="6">
-                                <v-text-field v-model="form.point_indicate" :error-messages="error.point_indicate" label="น้ำหนักคะแนน" />
+                                <v-text-field v-model="form.point_indicate" type="number" :error-messages="error.point_indicate" label="น้ำหนักคะแนน" />
                             </v-col>
                               <v-col cols="12" md="6">
                                 <v-select v-model="form.check_indicate" :items="[{title:'มี',value:'y'},{title:'ไม่มี',value:'n'}]" :error-messages="error.check_indicate" label="ลักษณะตัวเลิอกคะแนน" />
@@ -32,16 +32,24 @@
                         <tr class="bg-gray-400">
                             <th class="border text-center">ลำดับ</th>
                             <th class="border text-center">หัวข้อ</th>
+                            <th class="border text-center">ชื่อตัวชี้วัด</th>
+                            <th class="border text-center">รายละเอียด</th>
+                            <th class="border text-center">น้ำหนักคะแนน</th>
+                            <th class="border text-center">ลักษณะตัวเลิอกคะแนน</th>
                             <th class="border text-center">จัดการ</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(items,index) in result" :key="items.id_topic">
+                        <tr v-for="(items,index) in result" :key="items.id_indicate">
                             <td class="border text-center">{{ index+1 }}</td>
                             <td class="border text-center">{{ items.name_topic }}</td>
+                            <td class="border text-center">{{ items.name_indicate }}</td>
+                            <td class="border text-center">{{ items.detail_indicate }}</td>
+                            <td class="border text-center">{{ items.point_indicate }}</td>
+                            <td class="border text-center">{{ items.check_indicate === 'y' ? 'มี' : 'ไม่มี' }}</td>
                             <td class="border text-center">
                                 <v-btn class="text-white" size="small" color="warning" @click="edit(items)">แก้ไข</v-btn>&nbsp;
-                                <v-btn class="text-white" size="small" color="error" @click="del(items.id_topic)">ลบ</v-btn>
+                                <v-btn class="text-white" size="small" color="error" @click="del(items.id_indicate)">ลบ</v-btn>
                             </td>
                         </tr>
                         <tr v-if="result.length === 0">
@@ -98,8 +106,8 @@ function vaildateForm(){
 
 const fetch = async () => {
     try{
-        const to = await axios.get(`${api}/topic`)
-        topic.value = to.data
+        const t = await axios.get(`${api}/topic`)
+        topic.value = t.data
         const res = await axios.get(`${api}/indicate`)
         result.value = res.data
     }catch(err){

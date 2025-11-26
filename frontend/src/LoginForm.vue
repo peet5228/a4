@@ -28,6 +28,8 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import authApi from '@/api/authApi'
 
+const router = useRouter()
+
 const error = ref('')
 const username = ref('')
 const password = ref('')
@@ -41,6 +43,16 @@ const Login = async () => {
             password:password.value,
             role:role.value,
         })
+        console.log("API Response : ",res.data)
+        localStorage.setItem('token',res.data.token)
+        const useRole = res.data.role
+        if(useRole === "ฝ่ายบุคลากร"){
+            router.push("/Staff")
+        }else if(useRole === "กรรมการประเมิน"){
+            router.push("/Committee")
+        }else if(useRole === "ผู้รับการประเมินผล"){
+            router.push("/Evaluatee")
+        }
     }catch(err){}
 }
 

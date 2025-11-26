@@ -9,14 +9,15 @@ import Committee from '@/views/Committee/index.vue'
 //eva
 import Evaluatee from '@/views/Evaluatee/index.vue'
 import Edit_eva from '@/views/Evaluatee/Edit_eva.vue'
-<<<<<<< HEAD
+
 import Index from '@/views/Staff/index.vue'
 import ManageEva from '@/views/Staff/ManageEva.vue'
 import ManageCommit from '@/views/Staff/ManageCommit.vue'
 import Topic from '@/views/Staff/Topic.vue'
-=======
+import Indicate from '@/views/Staff/Indicate.vue'
+
 import Selfeva from '@/views/Evaluatee/Selfeva.vue'
->>>>>>> aa5531a0f0334fe8c8d9f1053c9fbc015453e633
+
 
 
 const router = createRouter({
@@ -61,6 +62,11 @@ const router = createRouter({
           path: '/Topic',
           name: 'Topic',
           component: Topic,
+        },
+        {
+          path: '/Indicate',
+          name: 'Indicate',
+          component: Indicate,
         },
       ]
     },

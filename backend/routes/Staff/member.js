@@ -24,6 +24,30 @@ router.get('/commit',async (req,res) => {
     }
 })
 
+// API สำหรับ GET ข้อมูล where params
+router.get('/',async (req,res) => {
+    try{
+        // const {iid_member} = req.params
+        const [rows] = await db.query(`select * from tb_member order by id_member desc`)
+        res.json(rows)
+    }catch(err){
+        console.error('Error Get',err)
+        res.status(500).json({message:'Error Get'})
+    }
+})
+
+// API สำหรับ GET ข้อมูล 
+router.get('/:id_member',async (req,res) => {
+    try{
+        const {iid_member} = req.params
+        const [rows] = await db.query(`select * from tb_member where id_member='${id_member}' order by id_member desc`)
+        res.json(rows)
+    }catch(err){
+        console.error('Error Get',err)
+        res.status(500).json({message:'Error Get'})
+    }
+})
+
 // API สำหรับ Update ข้อมูล
 router.put('/:id_member',async (req,res) => {
     try{

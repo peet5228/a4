@@ -3,7 +3,7 @@ const db = require('../../db')
 const router = express.Router()
 
 // API สำหรับ GET ข้อมูล
-// router.get('/eva',async (req,res) => {
+// router.get('/',async (req,res) => {
 //     try{
 //         const [rows] = await db.query(``)
 //         res.json(rows)

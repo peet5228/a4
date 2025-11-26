@@ -10,8 +10,14 @@
                             <v-col cols="12" md="6">
                                 <v-text-field v-model="form.name_indicate" :error-messages="error.name_indicate" label="ชื่อตัวชี้วัด" />
                             </v-col>
-                            <v-col cols="12" md="6">
-                                <v-textarea v-model="form.detail_indicate" :error-messages="error.detail_indicate" label="รายละเอียด" />
+                            <v-col cols="12" md="12">
+                                <v-textarea rows="3" v-model="form.detail_indicate" :error-messages="error.detail_indicate" label="รายละเอียด" />
+                            </v-col>
+                             <v-col cols="12" md="6">
+                                <v-text-field v-model="form.point_indicate" :error-messages="error.point_indicate" label="น้ำหนักคะแนน" />
+                            </v-col>
+                              <v-col cols="12" md="6">
+                                <v-select v-model="form.check_indicate" :items="[{title:'มี',value:'y'},{title:'ไม่มี',value:'n'}]" :error-messages="error.check_indicate" label="ลักษณะตัวเลิอกคะแนน" />
                             </v-col>
                             <v-col cols="12" md="6" class="text-center"><v-btn type="submit" color="blue" class="text-white w-full">{{ form.id_indicate ? 'อัปเดต' : 'บันทึก' }}</v-btn></v-col>
                             <v-col cols="12" md="6" class="text-center"><v-btn type="reset" color="error" class="text-white w-full">ยกเลิก</v-btn></v-col>

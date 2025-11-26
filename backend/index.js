@@ -20,20 +20,20 @@ app.use('/api/auth',auth)
 const profile = require('./routes/profile')
 app.use('/api/profile',profile)
 
-<<<<<<< HEAD
+
 const member = require('./routes/Staff/member')
 app.use('/api/Staff/member',member)
 
 const topic = require('./routes/Staff/topic')
 app.use('/api/Staff/topic',topic)
-=======
+
 //eva
 const me = require('./routes/Eva/me')
 app.use('/api/Eva/me',me)
 
 const selfeva = require('./routes/Eva/selfeva')
 app.use('/api/Eva/selfeva',selfeva)
->>>>>>> aa5531a0f0334fe8c8d9f1053c9fbc015453e633
+
 
 
 // Block 404

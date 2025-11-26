@@ -40,6 +40,15 @@ app.use('/api/Staff/eva',eva)
 const commit = require('./routes/Staff/commit')
 app.use('/api/Staff/commit',commit)
 
+const list = require('./routes/Staff/list')
+app.use('/api/Staff/list',list)
+
+const status = require('./routes/Staff/status')
+app.use('/api/Staff/status',status)
+
+const document = require('./routes/Staff/document')
+app.use('/api/Staff/document',document)
+
 //eva---------------------------------------------
 const me = require('./routes/Eva/me')
 app.use('/api/Eva/me',me)

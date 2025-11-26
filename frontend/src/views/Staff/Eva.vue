@@ -85,8 +85,6 @@ const reset = () => {
     }
 }
 
-
-
 const fetch = async () => {
     try{
         const r = await axios.get(`${api}/member/eva`)

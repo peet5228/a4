@@ -9,14 +9,19 @@ import Committee from '@/views/Committee/index.vue'
 //eva
 import Evaluatee from '@/views/Evaluatee/index.vue'
 import Edit_eva from '@/views/Evaluatee/Edit_eva.vue'
-<<<<<<< HEAD
+import Selfeva from '@/views/Evaluatee/Selfeva.vue'
+import Check_score from '@/views/Evaluatee/Check_score.vue'
+import Check_eva from '@/views/Evaluatee/Check_eva.vue'
+import Check_commit from '@/views/Evaluatee/Check_commit.vue'
+
+//staff
 import Index from '@/views/Staff/index.vue'
 import ManageEva from '@/views/Staff/ManageEva.vue'
 import ManageCommit from '@/views/Staff/ManageCommit.vue'
 import Topic from '@/views/Staff/Topic.vue'
-=======
-import Selfeva from '@/views/Evaluatee/Selfeva.vue'
->>>>>>> aa5531a0f0334fe8c8d9f1053c9fbc015453e633
+
+
+
 
 
 const router = createRouter({
@@ -64,6 +69,7 @@ const router = createRouter({
         },
       ]
     },
+
     // Commit
     {
       path: '/Committee',
@@ -96,6 +102,21 @@ const router = createRouter({
           path: '/Selfeva',
           name: 'Selfeva',
           component: Selfeva,
+        },
+        {
+          path: '/Check_score',
+          name: 'Check_score',
+          component: Check_score,
+        },
+        {
+          path: '/Check_eva',
+          name: 'Check_eva',
+          component: Check_eva,
+        },
+        {
+          path: '/Check_commit',
+          name: 'Check_commit',
+          component: Check_commit,
         },
       ]
     },

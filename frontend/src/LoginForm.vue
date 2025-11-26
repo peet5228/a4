@@ -9,9 +9,9 @@
                         <p class=" text-h5 font-weight-bold text-center">เข้าสู่ระบบ</p>
                         <v-alert type="error" v-if="error" variant="tonal">{{ error }}</v-alert>
                         <v-form @submit.prevent="Login">
-                            <v-text-field v-modal="username" label="ชื่อผู้ใช้" prepend-inner-icon="mdi-account" />
-                            <v-text-field v-modal="password" label="รหัสผ่าน" type="password" prepend-inner-icon="mdi-lock" />
-                            <v-text-field v-modal="role" label="ประเภทสมาชิก" :items="Group" prepend-inner-icon="mdi-account-group" />
+                            <v-text-field v-model="username" label="ชื่อผู้ใช้" prepend-inner-icon="mdi-account" />
+                            <v-text-field v-model="password" label="รหัสผ่าน" type="password" prepend-inner-icon="mdi-lock" />
+                            <v-select v-model="role" label="ประเภทสมาชิก" :items="Group" prepend-inner-icon="mdi-account-group" />
                             <v-btn class="text-white w-full" color="#7d0c14" type="submit">เข้าสู่ระบบ</v-btn>
                         </v-form>
                         <center><router-link to="/regis" class="text-blue-500 hover:underline">สมัครสมาชิก</router-link></center>

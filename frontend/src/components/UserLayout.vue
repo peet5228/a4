@@ -4,7 +4,7 @@
             <v-app-bar-nav-icon @click="drawer = !drawer" variant="text"></v-app-bar-nav-icon>
             <v-toolbar-title>ระบบประเมินบุคลากรวิทยาลัยเทคนิคน่าน</v-toolbar-title>
             <div><p>ชื่อ : {{ user.first_name }} {{ user.last_name }} <br> {{ user.role }}</p></div>&nbsp;&nbsp;&nbsp;&nbsp;
-            <v-btn color="bg-white" @click="logout">ออกจากระบบ</v-btn>
+            <v-btn class="bg-white" @click="logout">ออกจากระบบ</v-btn>
         </v-app-bar>
         <v-navigation-drawer color="#4A4A4A" app :temporary="isMobile" :permanent="!isMobile">
             <v-list>

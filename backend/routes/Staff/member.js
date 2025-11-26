@@ -5,7 +5,7 @@ const router = express.Router()
 // API สำหรับ GET ข้อมูล
 router.get('/eva',async (req,res) => {
     try{
-        const [rows] = await db.query(`select * from tb_member where role='ผู้รับการประเมินผล' order by id_mmber desc`)
+        const [rows] = await db.query(`select * from tb_member where role='ผู้รับการประเมินผล' order by id_member desc`)
         res.json(rows)
     }catch(err){
         console.error('Error Get',err)
@@ -16,7 +16,7 @@ router.get('/eva',async (req,res) => {
 // API สำหรับ GET ข้อมูล
 router.get('/commit',async (req,res) => {
     try{
-        const [rows] = await db.query(`select * from tb_member where role='กรรมการประเมิน' order by id_mmber desc`)
+        const [rows] = await db.query(`select * from tb_member where role='กรรมการประเมิน' order by id_member desc`)
         res.json(rows)
     }catch(err){
         console.error('Error Get',err)
@@ -25,7 +25,7 @@ router.get('/commit',async (req,res) => {
 })
 
 // API สำหรับ Update ข้อมูล
-router.put('/:id_member',async () => {
+router.put('/:id_member',async (req,res) => {
     try{
         const {id_member} = req.params
         const {first_name,last_name,email,username,password,role} = req.body
@@ -38,14 +38,14 @@ router.put('/:id_member',async () => {
 })
 
 // API สำหรับ Delete ข้อมูล
-router.delete('/:id_member',async () => {
+router.delete('/:id_member',async (req,res) => {
     try{
         const {id_member} = req.params
         const [rows] = await db.query(`delete from tb_member where id_member='${id_member}'`)
         if(rows.affactedRows === 0) return res.status(403).json({message:'ไม่พบข้อมูลจากไอดีนี้'})
         res.json({rows,message:'Delete Success'})
     }catch(err){
-        console.error('Error Delete',err)Delete
+        console.error('Error Delete',err)
         res.status(500).json({message:'Error Delete'})
     }
 })

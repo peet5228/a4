@@ -9,6 +9,10 @@ import Committee from '@/views/Committee/index.vue'
 //eva
 import Evaluatee from '@/views/Evaluatee/index.vue'
 import Edit_eva from '@/views/Evaluatee/Edit_eva.vue'
+import Index from '@/views/Staff/index.vue'
+import ManageEva from '@/views/Staff/ManageEva.vue'
+import ManageCommit from '@/views/Staff/ManageCommit.vue'
+import Topic from '@/views/Staff/Topic.vue'
 
 
 const router = createRouter({
@@ -29,7 +33,34 @@ const router = createRouter({
       redirect: '/login',
     },
 
-    //commit
+    //Staff
+    {
+      path: '/Staff',
+      component: UserLayout,
+      children:[
+        {
+          path: '/Staff',
+          name: 'Staff',
+          component: Index,
+        },
+        {
+          path: '/ManageEva',
+          name: 'ManageEva',
+          component: ManageEva,
+        },
+        {
+          path: '/ManageCommit',
+          name: 'ManageCommit',
+          component: ManageCommit,
+        },
+        {
+          path: '/Topic',
+          name: 'Topic',
+          component: Topic,
+        },
+      ]
+    },
+    // Commit
     {
       path: '/Committee',
       component: UserLayout,

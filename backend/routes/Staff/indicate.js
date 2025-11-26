@@ -12,4 +12,5 @@ const router = express.Router()
 //         res.status(500).json({message:'Error Get'})
 //     }
 // })
+
 module.exports = router

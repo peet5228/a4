@@ -2,7 +2,7 @@
     <v-container fluid class="py-10">
                 <v-form @submit.prevent="saveMember">
                     <v-card class="pa-4">
-                        <h1 class=" font-weight-bold text-h5 text-center text-maroon">จัดการผู้รับการประเมิน</h1>&nbsp;
+                        <h1 class=" font-weight-bold text-h5 text-center text-maroon">จัดการกรรมการประเมิน</h1>&nbsp;
                         <v-row class="mt-4">
                             <v-col cols="12" md="6">
                                 <v-text-field v-model="form.first_name" :error-messages="error.first_name" label="ชื่อ"></v-text-field>
@@ -99,8 +99,8 @@ const error = ref<Record<string,string>>({})
 
 const roles = [
     // {text:'ฝ่ายบุคลากร',value:'ฝ่ายบุคลากร'},
-    // {text:'กรรมการประเมิน',value:'กรรมการประเมิน'},
-    {text:'ผู้รับการประเมินผล',value:'ผู้รับการประเมินผล'},
+    {text:'กรรมการประเมิน',value:'กรรมการประเมิน'},
+    // {text:'ผู้รับการประเมินผล',value:'ผู้รับการประเมินผล'},
 ]
 const emailReget = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i
 function vaildateForm(){
@@ -120,7 +120,7 @@ function vaildateForm(){
 
 const fetch = async () => {
     try{
-        const res = await axios.get(`${api}/member/eva`)
+        const res = await axios.get(`${api}/member/commit`)
         result.value = res.data
     }catch(err){
         console.error('Error Fetching',err)

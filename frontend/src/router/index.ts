@@ -27,6 +27,7 @@ import Indicate from '@/views/Staff/Indicate.vue'
 
 import Round_eva from '@/views/Staff/Round_eva.vue'
 import Eva from '@/views/Staff/Eva.vue'
+import Eva_commit from '@/views/Staff/Eva_commit.vue'
 
 
 
@@ -88,6 +89,11 @@ const router = createRouter({
           path: '/Eva',
           name: 'Eva',
           component: Eva,
+        },
+        {
+          path: '/Eva_commit/:id_eva',
+          name: 'Eva_commit',
+          component: Eva_commit,
         },
       ]
     },

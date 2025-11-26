@@ -39,6 +39,7 @@ const roles = [
     {title:'จัดการกรรมหัวข้อการประเมิน',to:'/Topic',role:'ฝ่ายบุคลากร'},
     {title:'จัดการตัวชี้วัด',to:'/Indicate',role:'ฝ่ายบุคลากร'},
     {title:'จัดการรอบการประเมิน',to:'/Round_eva',role:'ฝ่ายบุคลากร'},
+    {title:'จัดการแบบประเมิน',to:'/Eva',role:'ฝ่ายบุคลากร'},
 
     //commit
     {title:'หน้าหลัก',to:'/Committee',role:'กรรมการประเมิน'},

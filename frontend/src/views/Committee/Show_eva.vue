@@ -6,9 +6,11 @@
                             <th class="border text-center">ลำดับ</th>
                             <th class="border text-center">ชื่อ</th>
                             <th class="border text-center">นามสกุล</th>
+                            <th class="border text-center">รอบประเมิน</th>
+                            <th class="border text-center">ปีประเมิน</th>
                             <th class="border text-center">สถานะการประเมิน</th>
                             <th class="border text-center">คะแนนประเมิน</th>
-                            <th class="border text-center">ตรวจสอบ</th>
+                            <th class="border text-center">ประเมิน</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -16,10 +18,12 @@
                             <td class="border text-center">{{ index+1 }}</td>
                             <td class="border text-center">{{ items.first_name }}</td>
                             <td class="border text-center">{{ items.last_name }}</td>
+                            <td class="border text-center">{{ items.round_sys }}</td>
+                            <td class="border text-center">{{ items.year_sys }}</td>
                             <td class="border text-center">{{ items.status_eva === 1 ? 'ผู้รับประเมินกำลังประเมินตนเอง' : items.status_eva === 2 ? 'รอกรรมกาประเมิน' : 'ประเมินเสร็จสิ้น' }}</td>
                             <td class="border text-center">{{ items.total_eva }} คะแนน</td>
                             <td class="border text-center">
-                                <v-btn class="text-white" size="small" color="blue" @click="add(items.id_eva)">ตรวจสอบ</v-btn>
+                                <v-btn class="text-white" size="small" color="blue" @click="add(items.id_eva)">ประเมิน</v-btn>
                             </td>
                         </tr>
                         <tr v-if="result.length === 0">

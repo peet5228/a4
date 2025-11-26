@@ -5,11 +5,12 @@ import UserLayout from '@/components/UserLayout.vue'
 
 //commit
 import Committee from '@/views/Committee/index.vue'
+import Show_score from '@/views/Committee/Show_score.vue'
+import Show_eva from '@/views/Committee/Show_eva.vue'
 
 //eva
 import Evaluatee from '@/views/Evaluatee/index.vue'
 import Edit_eva from '@/views/Evaluatee/Edit_eva.vue'
-
 
 import Selfeva from '@/views/Evaluatee/Selfeva.vue'
 import Check_score from '@/views/Evaluatee/Check_score.vue'
@@ -100,6 +101,16 @@ const router = createRouter({
           path: '/Committee',
           name: 'Committee',
           component: Committee,
+        },
+        {
+          path: '/Show_score/:id_eva',
+          name: 'Show_score',
+          component: Show_score,
+        },
+        {
+          path: '/Show_eva',
+          name: 'Show_eva',
+          component: Show_eva,
         },
       ]
     },

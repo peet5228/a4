@@ -42,7 +42,8 @@ const roles = [
     {title:'จัดการแบบประเมิน',to:'/Eva',role:'ฝ่ายบุคลากร'},
 
     //commit
-    {title:'หน้าหลัก',to:'/Committee',role:'กรรมการประเมิน'},
+    {title:'รายชื่อผู้รับการประเมิน',to:'/Committee',role:'กรรมการประเมิน'},
+    {title:'ดำเนินการประเมิน',to:'/Show_eva',role:'กรรมการประเมิน'},
 
     //eva
     {title:'หน้าหลัก',to:'/Evaluatee',role:'ผู้รับการประเมินผล'},

@@ -38,18 +38,22 @@ const eva = require('./routes/Staff/eva')
 app.use('/api/Staff/eva',eva)
 
 //eva---------------------------------------------
-
-//eva
 const me = require('./routes/Eva/me')
 app.use('/api/Eva/me',me)
 
 const selfeva = require('./routes/Eva/selfeva')
 app.use('/api/Eva/selfeva',selfeva)
 
-
 const check_eva = require('./routes/Eva/check_eva')
 app.use('/api/Eva/check_eva',check_eva)
 
+
+//commit
+const show_eva = require('./routes/Commit/show_eva')
+app.use('/api/Commit/show_eva',show_eva)
+
+const show_score = require('./routes/Commit/show_score')
+app.use('/api/Commit/show_score',show_score)
 
 
 // Block 404

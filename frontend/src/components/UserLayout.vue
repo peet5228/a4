@@ -6,7 +6,7 @@
             <div><p>ชื่อ : {{ user.first_name }} {{ user.last_name }} <br> {{ user.role }}</p></div>&nbsp;&nbsp;&nbsp;&nbsp;
             <v-btn class="bg-white" @click="logout">ออกจากระบบ</v-btn>
         </v-app-bar>
-        <v-navigation-drawer color="#4A4A4A" app :temporary="isMobile" :permanent="!isMobile">
+        <v-navigation-drawer color="#4A4A4A" v-model="drawer" app :temporary="isMobile" :permanent="!isMobile">
             <v-list>
                 <v-list-item v-for="item in navitem" :key="item.title" :to="item.to">
                     <v-list-item-title>{{ item.title }}</v-list-item-title>
@@ -40,6 +40,7 @@ const roles = [
 
     //eva
     {title:'หน้าหลัก',to:'/Evaluatee',role:'ผู้รับการประเมินผล'},
+    {title:'แก้ไขข้อมูลส่วนตัว',to:'/Edit_eva',role:'ผู้รับการประเมินผล'},
 ]
 const navitem = computed(() =>
     roles.filter((item) => item.role.includes(user.value.role))

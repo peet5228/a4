@@ -8,6 +8,7 @@ import Committee from '@/views/Committee/index.vue'
 
 //eva
 import Evaluatee from '@/views/Evaluatee/index.vue'
+import Edit_eva from '@/views/Evaluatee/Edit_eva.vue'
 
 
 const router = createRouter({
@@ -50,6 +51,11 @@ const router = createRouter({
           path: '/Evaluatee',
           name: 'Evaluatee',
           component: Evaluatee,
+        },
+        {
+          path: '/Edit_eva',
+          name: 'Edit_eva',
+          component: Edit_eva,
         },
       ]
     },

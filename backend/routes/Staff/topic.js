@@ -67,7 +67,7 @@ router.delete('/:id_topic',async (req,res) => {
     try{
         const {id_topic} = req.params
         const [rows] = await db.query(`delete from tb_topic where id_topic='${id_topic}'`)
-        if(rows.affactedRows === 0) return res.status(403).json({message:'ไม่พบข้อมูลจากไอดีนี้'})
+        if(rows.affectedRows === 0) return res.status(403).json({message:'ไม่พบข้อมูลจากไอดีนี้'})
         res.json({rows,message:'Delete Success'})
     }catch(err){
         console.error('Error Update',err)
